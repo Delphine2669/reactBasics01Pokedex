@@ -18,6 +18,8 @@ const PokemonCard = () => {
 }
 
 
+
+
 const pokemonList = [
     {
         name: "bulbasaur",
