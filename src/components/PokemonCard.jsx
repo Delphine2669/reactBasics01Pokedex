@@ -1,5 +1,8 @@
-const PokemonCard = () => {
-    const pokemon = pokemonList[0]
+import PropTypes from "prop-types"
+
+
+const PokemonCard = ({ pokemon }) => {
+
     if (pokemon.imgSrc) {
 
         return (
@@ -17,6 +20,13 @@ const PokemonCard = () => {
     }
 }
 
+PokemonCard.propTypes = {
+    pokemon: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        imgStc: PropTypes.string,
+    }).isRequired,
+}
+
 
 
 
@@ -30,8 +40,5 @@ const pokemonList = [
         name: "mew",
     },
 ];
-
-
-
 
 export default PokemonCard
