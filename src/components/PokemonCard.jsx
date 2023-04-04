@@ -1,5 +1,5 @@
 const PokemonCard = (props) => {
-    const pokemon = props.pokemon
+    const pokemon = props.pokemon;
     if (pokemon.imgSrc) {
 
         return (
@@ -12,15 +12,8 @@ const PokemonCard = (props) => {
         return <figure>
             <p> ??? </p>
             <figcaption>{pokemon.name}</figcaption> </figure>
-
-
     }
-    console.log(PokemonCard)
 }
-
-
-
-
 const pokemonList = [
     {
         name: "bulbasaur",
@@ -32,7 +25,5 @@ const pokemonList = [
     },
 ];
 
-
-
-
 export default PokemonCard
+
