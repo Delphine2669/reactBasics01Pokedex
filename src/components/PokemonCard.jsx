@@ -1,5 +1,5 @@
-const PokemonCard = () => {
-    const pokemon = pokemonList[0]
+const PokemonCard = (props) => {
+    const pokemon = props.pokemon
     if (pokemon.imgSrc) {
 
         return (
@@ -15,6 +15,7 @@ const PokemonCard = () => {
 
 
     }
+    console.log(PokemonCard)
 }
 
 
