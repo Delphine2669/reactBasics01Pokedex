@@ -8,13 +8,15 @@ const PokemonCard = ({ pokemon }) => {
         return (
             <figure>
                 <img src={pokemon.imgSrc} alt={`picture of pokemon ${pokemon.name}`} />
-                <figcaption>{pokemon.name}</figcaption> </figure>
+                <figcaption>{pokemon.name}</figcaption>
+            </figure>
         )
     }
     else {
         return <figure>
             <p> ??? </p>
-            <figcaption>{pokemon.name}</figcaption> </figure>
+            <figcaption>{pokemon.name}</figcaption>
+        </figure>
 
 
     }
@@ -25,6 +27,7 @@ PokemonCard.propTypes = {
         name: PropTypes.string.isRequired,
         imgStc: PropTypes.string,
     }).isRequired,
+
 }
 
 
