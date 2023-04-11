@@ -46,7 +46,7 @@ function App() {
 
 
       <h3>{pokemonList[pokemonIndex].name} </h3>
-      <Button previous={handleClickPrevious} next={handleClickNext} />
+      <Button previous={handleClickPrevious} disabledPrevious={pokemonIndex === 0} next={handleClickNext} disabledNext={pokemonIndex === pokemonList.length - 1} />
 
 
     </div >
