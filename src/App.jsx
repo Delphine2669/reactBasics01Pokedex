@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import './App.css'
 import Button from './components/NavBar'
+import { useEffect } from 'react'
 
 function App() {
+
+
   const [pokemonIndex, setPokemonIndex] = useState(0)
   const pokemonList = [
     {
@@ -38,6 +41,15 @@ function App() {
     if (pokemonIndex < pokemonList.length - 1) { setPokemonIndex(pokemonIndex + 1) }
   }
 
+
+  useEffect(() => {
+    console.log("welcome this is an automatic message")
+    alert('hello pokemon trainer :)')
+  },
+    [])
+
+
+
   return (
 
 
@@ -46,7 +58,7 @@ function App() {
 
 
       <h3>{pokemonList[pokemonIndex].name} </h3>
-      <Button previous={handleClickPrevious} next={handleClickNext} />
+      <Button previous={handleClickPrevious} disabledPrevious={pokemonList[pokemonIndex] - 1} next={handleClickNext} />
 
 
     </div >
