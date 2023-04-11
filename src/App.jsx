@@ -1,13 +1,9 @@
 import { useState } from 'react'
 import './App.css'
-import PokemonCard from './components/PokemonCard'
-import React from 'react'
-
-
+import Button from './components/NavBar'
 
 function App() {
-  //   const [count, setCount] = useState(0)
-
+  const [pokemonIndex, setPokemonIndex] = useState(0)
   const pokemonList = [
     {
       name: "bulbasaur",
@@ -32,58 +28,30 @@ function App() {
     {
       name: "mew",
     },
-  ];
+  ]
 
-  const [pokemonIndex, setPokemonIndex] = useState(0)
 
-  const previousButton = () => {
-    setPokemonIndex((previousIndex) => {
-      if (previousIndex > 0) {
-        return previousIndex - 1
-      }
-      else {
-        return previousIndex
-      }
-    })
-
+  const handleClickPrevious = () => {
+    if (pokemonIndex > 0) { setPokemonIndex(pokemonIndex - 1) }
   }
-
-  const nextButton = () => {
-    setPokemonIndex((previousIndex) => {
-      if (previousIndex < pokemonList.length - 1) {
-        return previousIndex + 1
-      }
-      else {
-        return previousIndex
-      }
-    }
-    )
+  const handleClickNext = () => {
+    if (pokemonIndex < pokemonList.length - 1) { setPokemonIndex(pokemonIndex + 1) }
   }
-
 
   return (
 
 
-
     <div>
-
-
       <img src={pokemonList[pokemonIndex].imgSrc} alt="" />
 
 
       <h3>{pokemonList[pokemonIndex].name} </h3>
+      <Button previous={handleClickPrevious} next={handleClickNext} />
 
-      <button onClick={previousButton} disabled={pokemonIndex === 0}>Precedent</button>
 
-      <button onClick={nextButton} disabled={pokemonIndex === pokemonList.length - 1}> Suivant</button>
-
-    </div>
+    </div >
 
   )
 
 }
-
-
-
-
 export default App
