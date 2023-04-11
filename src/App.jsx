@@ -48,7 +48,11 @@ function App() {
   },
     [])
 
-
+  useEffect(() => {
+    if (pokemonList[pokemonIndex].name === "pikachu") {
+      alert("pika pikachu !!!")
+    }
+  }, [pokemonIndex, pokemonList])
 
   return (
 
@@ -58,7 +62,7 @@ function App() {
 
 
       <h3>{pokemonList[pokemonIndex].name} </h3>
-      <Button previous={handleClickPrevious} disabledPrevious={pokemonList[pokemonIndex] - 1} next={handleClickNext} />
+      <Button previous={handleClickPrevious} disabledPrevious={pokemonIndex === 0} next={handleClickNext} disabledNext={pokemonIndex === pokemonList.length - 1} />
 
 
     </div >

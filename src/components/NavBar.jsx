@@ -2,8 +2,8 @@ import React from "react"
 
 function Button({ previous, disabledPrevious, next, disabledNext }) {
     return <>
-        <button onClick={previous}>Precedent</button>
-        <button onClick={next}>Suivant</button>
+        <button onClick={previous} disabled={disabledPrevious}>Precedent</button>
+        <button onClick={next} disabled={disabledNext}>Suivant</button>
 
     </>
 
