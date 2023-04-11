@@ -1,12 +1,16 @@
 import React from "react"
 
-function Button({ previous, disabledPrevious, next, disabledNext }) {
-    return <>
-        <button onClick={previous} disabled={disabledPrevious}>Precedent</button>
-        <button onClick={next} disabled={disabledNext}>Suivant</button>
+function Button({ pokemonList, onClick }) {
+    const handleClick = (index) => { onClick(index) }
+    return (
+        <div>
+            {pokemonList.map((pokemon, index) => (
+                <button key={index} onClick={() => handleClick(index)}>
+                    {pokemon.name}</button>
+            ))}
 
-    </>
-
+        </div>
+    )
 }
 
 export default Button

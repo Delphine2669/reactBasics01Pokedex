@@ -29,13 +29,8 @@ function App() {
       name: "mew",
     },
   ]
-
-
-  const handleClickPrevious = () => {
-    if (pokemonIndex > 0) { setPokemonIndex(pokemonIndex - 1) }
-  }
-  const handleClickNext = () => {
-    if (pokemonIndex < pokemonList.length - 1) { setPokemonIndex(pokemonIndex + 1) }
+  const handleClick = (index) => {
+    setPokemonIndex(index)
   }
 
   return (
@@ -43,10 +38,8 @@ function App() {
 
     <div>
       <img src={pokemonList[pokemonIndex].imgSrc} alt="" />
-
-
       <h3>{pokemonList[pokemonIndex].name} </h3>
-      <Button previous={handleClickPrevious} disabledPrevious={pokemonIndex === 0} next={handleClickNext} disabledNext={pokemonIndex === pokemonList.length - 1} />
+      <Button pokemonList={pokemonList} onClick={handleClick} />
 
 
     </div >
